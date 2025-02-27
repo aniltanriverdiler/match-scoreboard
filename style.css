@@ -1,0 +1,14 @@
+.custom-bg {
+    background-image: url('assets/img/football-field-plan.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+
+
