@@ -1,4 +1,4 @@
-// Team - A Section
+// Team - A SectionF
 let count = 0;
 
 function updateCounterDisplay () {
