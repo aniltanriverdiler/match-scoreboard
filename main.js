@@ -1,85 +1,56 @@
-// Team - A Section
-let count = 0;
+const increaseScore = (team) => {
+    const teamId = `score${team}`;
+    const scoreElement = document.getElementById(teamId);
 
-function updateCounterDisplay () {
-    document.getElementById("counter-display-a").textContent = count;
-}
+    let score = Number(scoreElement.innerHTML)
+    scoreElement.innerHTML = ++score
+};
 
-function increase() {
-    count++;
-    updateCounterDisplay();
-}
+const decreaseScore = (team) => {
+    const teamId = `score${team}`;
+    const scoreElement = document.getElementById(teamId);
 
-function decrease() {
-    if (count > 0) {
-        count--;
-        updateCounterDisplay();
+    let score = +scoreElement.innerHTML;
+
+    if (score > 0) {
+        score--;
+        scoreElement.innerHTML = score;
     } else {
-        alert("Score cannot go below zero!");
+        alert("Score cannot go below zero!")
     }
-}
+};
 
-function reset() {
-    count = 0;
-    updateCounterDisplay();
-}
+const setNamePrompt = (team) => {
+    const name = prompt("Please enter the team name: ");
 
-function score() {
-    const scorePrompt = prompt("Please enter the score you want to input.");
-    const scoreNumber = parseInt(scorePrompt);
-
-    if (isNaN(scoreNumber)) {
-      alert("You cannot enter the score as a letter.");
-    } else if (scoreNumber <= 0){
-        alert("You cannot enter a negative score.");
+    if (name === null || name.trim() === "") {
+        alert("You haven't entered any name!")
     } else {
-      document.getElementById("counter-display-a").textContent = scoreNumber;
+        const teamId = `teamName${team}`;
+        const teamNameElement = document.getElementById(teamId);
+        teamNameElement.innerHTML = name;
     }
-}
+};
 
-function teamName() {
-    const namePrompt = prompt("Please enter the team name.");
-    document.getElementById("change-team-name-a").textContent = namePrompt;
-}
+document.getElementById("resetButtonA").addEventListener("click", () => {
+    document.getElementById("scoreA").innerHTML = 0;
+    document.getElementById("teamNameA").innerHTML = "Team A";
+});
 
-//Team - B Section
-function updateCounterDisplay2 () {
-    document.getElementById("counter-display-b").textContent = count;
-}
+document.getElementById("resetButtonB").addEventListener("click", () => {
+    document.getElementById("scoreB").innerHTML = 0;
+    document.getElementById("teamNameB").innerHTML = "Team B";
+});
 
-function increase2() {
-    count++;
-    updateCounterDisplay2();
-}
+const setScorePrompt = (team) => {
+  const score = prompt("Please enter the score you want to input: ");
+  const scoreNum = Number(score);
 
-function decrease2() {
-    if (count > 0) {
-        count--;
-        updateCounterDisplay2();
-    } else {
-        alert("Score cannot go below zero!");
-    }
-}
-
-function reset2() {
-    count = 0;
-    updateCounterDisplay2();
-}
-
-function score2() {
-    const scorePrompt = prompt("Please enter the score you want to input.");
-    const scoreNumber = parseInt(scorePrompt);
-
-    if (isNaN(scoreNumber)) {
-      alert("You cannot enter the score as a letter.");
-    } else if (scoreNumber <= 0){
-        alert("You cannot enter a negative score.");
-    } else {
-      document.getElementById("counter-display-b").textContent = scoreNumber;
-    }
-}
-
-function teamName2() {
-    const namePrompt = prompt("Please enter the team name.");
-    document.getElementById("change-team-name-b").textContent = namePrompt;
-}
+  if (scoreNum < 0 || score === null || score.trim() === "" || !Number.isInteger(scoreNum)) {
+    alert("Please enter a valid number.")
+  } else {
+    const teamId = `score${team}`;
+    const scoreElement = document.getElementById(teamId);
+    scoreElement.innerHTML = scoreNum;
+  }
+};
