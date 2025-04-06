@@ -6,18 +6,32 @@
     <meta name="description" content="Match - Scoreboard" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Match - Scoreboard</title>
-    <link rel="icon" type="image/png" href="assets/scoreboard-favicon.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/danger-favicon.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Teams Information Section -->
     <main class="custom-bg">
+      <!-- Video Background Section -->
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline preload="auto">
+          <source
+            src="assets/video/soldier-from-call-of-duty.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
       <div class="container text-center">
         <div class="row">
           <!-- Team - A Information Section -->
@@ -31,13 +45,13 @@
                   <button onclick="increaseScore('A')">+</button>
                 </div>
                 <div class="d-flex flex-column align-items-center gap-3">
-                  <button class="col-2" onclick="setScorePrompt('A')">
+                  <button class="col-4" onclick="setScorePrompt('A')">
                     Set Score
                   </button>
-                  <button class="col-3" onclick="setNamePrompt('A')">
+                  <button class="col-5" onclick="setNamePrompt('A')">
                     Change Name
                   </button>
-                  <button class="col-2" id="resetButtonA">Reset</button>
+                  <button class="col-4" id="resetButtonA">Reset</button>
                 </div>
               </div>
             </div>
@@ -53,9 +67,13 @@
                   <button onclick="increaseScore('B')">+</button>
                 </div>
                 <div class="d-flex flex-column align-items-center gap-3">
-                  <button onclick="setScorePrompt('B')">Set Score</button>
-                  <button onclick="setNamePrompt('B')">Change Name</button>
-                  <button id="resetButtonB">Reset</button>
+                  <button class="col-4" onclick="setScorePrompt('B')">
+                    Set Score
+                  </button>
+                  <button class="col-5" onclick="setNamePrompt('B')">
+                    Change Name
+                  </button>
+                  <button class="col-4" id="resetButtonB">Reset</button>
                 </div>
               </div>
             </div>
