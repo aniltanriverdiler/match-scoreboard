@@ -41,7 +41,7 @@ body {
 
 /* Team Cards */
 .team {
-  background: rgba(0, 0, 0, 0.35); /* daha şeffaf arka plan */
+  background: rgba(0, 0, 0, 0.35); 
   border-radius: 12px;
   padding: 16px;
   color: #fff;
